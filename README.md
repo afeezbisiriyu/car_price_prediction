@@ -1,5 +1,7 @@
 # Car Price Prediction Using Machine Learning
 
+![text](images/Screenshot.png)
+
 ## Project Overview
 This project predicts used car prices from real-world advert data. I built it to demonstrate a complete and professional machine learning workflow that includes data cleaning, exploratory analysis, feature engineering, baseline modelling, advanced modelling and evaluation. Accurate price prediction supports valuation tools, dealership strategies and online marketplaces where consistent pricing and fair valuation are essential.
 
