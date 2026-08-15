@@ -72,7 +72,7 @@ Mileage and vehicle age both showed strong negative relationships with price, co
 
 ![text](images/milagevsprice.png)
 
-![text](images/ageVsvehicle.png)
+![text](images/vehiclevsprice.png)
 
 Correlation analysis across the numeric features reinforced these patterns, with mileage and vehicle age both showing meaningful negative correlation with price, confirming that these variables would carry real predictive weight in modelling.
 
