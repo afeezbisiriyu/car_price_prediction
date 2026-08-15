@@ -70,7 +70,7 @@ During the exploratory analysis of the numerical variables, price was found to b
 
 Mileage and vehicle age both showed strong negative relationships with price, consistent with expectations that higher-mileage and older vehicles are worth less.
 
-![text](images/mileagevsprice.png)
+![text](images/milagevsprice.png)
 
 ![text](images/ageVsvehicle.png)
 
@@ -80,7 +80,7 @@ Correlation analysis across the numeric features reinforced these patterns, with
 
 Data also revealed noticeable price variation across body types, suggesting that vehicle segment carries independent pricing signal beyond mileage and age alone.
 
-![text](images/body_type.png)
+![text](images/pricevariationbybody.png)
 
 ### Data Preprocessing
 After engineering a combined make/model feature and applying frequency encoding, the dataset was organised into a compact set of numeric predictors (mileage, vehicle age, year of registration, make/model frequency) and categorical predictors (body type, fuel type, vehicle condition), which were then scaled and one-hot encoded respectively within a single preprocessing pipeline.
@@ -95,15 +95,15 @@ Modelling was performed first with a Linear Regression baseline, then with an XG
 ### Visualisation
 The true-vs-predicted plot for the XGBoost model shows predictions clustering closely around the diagonal, indicating that predicted log prices track actual log prices closely across the price range.
 
-[image: true vs. predicted price scatter plot]
+![text](images/truevspredicted.png)
 
 The residuals distribution is centred around zero without heavy skew, indicating that the model's errors are evenly distributed rather than systematically biased toward over- or under-pricing any segment.
 
-[image: residuals distribution plot]
+![text](images/residualsdistribution.png)
 
 Feature importance analysis shows the model relying most heavily on vehicle age, mileage, and the frequency-encoded make/model feature, with fuel type and body type contributing secondary but meaningful signal.
 
-[image: top 15 feature importance bar chart]
+![text](images/feature.png)
 
 ## KEY INSIGHTS
 Price is heavily right-skewed, which supported the decision to model on a log-transformed target.
@@ -114,6 +114,8 @@ The performance gap between the two models confirms that car pricing depends on 
 Feature importance results show vehicle age, mileage, and make/model popularity as the dominant predictors, matching real-world automotive pricing intuition.
 Body type and fuel type contribute secondary but meaningful signal, reflecting how different vehicle segments occupy different price bands.
 The alignment between model behaviour and domain expectations increases confidence that the model has learned genuine pricing structure rather than noise.
+
+![text](images/compare_model.png)
 
 ## RECOMMENDATION
 Adopt the XGBoost model as the pricing reference point for dealership and marketplace valuation tools, given its clear performance advantage over a linear baseline.
