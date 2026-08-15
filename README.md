@@ -66,30 +66,31 @@ XGBoost: Used to train the final gradient-boosted regression model.
 ### Numerical Data
 During the exploratory analysis of the numerical variables, price was found to be heavily right-skewed, with most vehicles in a moderate price range and a smaller number of high-value listings pulling the distribution's tail out. This confirmed that a log transformation of price was appropriate ahead of modelling.
 
-[image: price distribution histogram]
+![text](images/logprice.png)
 
 Mileage and vehicle age both showed strong negative relationships with price, consistent with expectations that higher-mileage and older vehicles are worth less.
 
-[image: mileage vs. price scatter plot]
-[image: vehicle age vs. price scatter plot]
+![text](images/mileagevsprice.png)
+
+![text](images/ageVsvehicle.png)
 
 Correlation analysis across the numeric features reinforced these patterns, with mileage and vehicle age both showing meaningful negative correlation with price, confirming that these variables would carry real predictive weight in modelling.
 
-[image: correlation heatmap]
+![text](images/heatmap.png)
 
 Data also revealed noticeable price variation across body types, suggesting that vehicle segment carries independent pricing signal beyond mileage and age alone.
 
-[image: boxplot of price by body type]
+![text](images/body_type.png)
 
 ### Data Preprocessing
 After engineering a combined make/model feature and applying frequency encoding, the dataset was organised into a compact set of numeric predictors (mileage, vehicle age, year of registration, make/model frequency) and categorical predictors (body type, fuel type, vehicle condition), which were then scaled and one-hot encoded respectively within a single preprocessing pipeline.
 
-[image: feature set overview]
+![text](images/preprocessing_numAndCat.png)
 
 ### Model Training
 Modelling was performed first with a Linear Regression baseline, then with an XGBoost regressor (300 trees, max depth 6, learning rate 0.08, with row and column subsampling), trained on an 80/20 split of the data.
 
-[image: model training pipeline]
+![text](images/preprocessing.png)
 
 ### Visualisation
 The true-vs-predicted plot for the XGBoost model shows predictions clustering closely around the diagonal, indicating that predicted log prices track actual log prices closely across the price range.
